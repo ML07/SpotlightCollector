@@ -1,0 +1,25 @@
+﻿<Window x:Class="SL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SL"
+        xmlns:viewModels="clr-namespace:SL.ViewModels"
+        mc:Ignorable="d"
+        Title="Windows logon screen wallpaper collector" Height="450" Width="890">
+    <Window.DataContext>
+        <viewModels:MainViewModel />
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,10">
+            <TextBlock Text="Remaining time until auto close: "/><TextBlock Name="remainingTimeToAutoCloseInSecond"/>
+        </StackPanel>
+        <TextBlock Text="{Binding LogsToUI}" FontFamily="Courier New" Grid.Row="1"/>
+        <!--<ListView ItemsSource="{Binding }"/>-->
+    </Grid>
+</Window>
